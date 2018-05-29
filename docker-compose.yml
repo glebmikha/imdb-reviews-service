@@ -1,0 +1,29 @@
+version:                  "3"
+services:
+    # frontend:
+    #     build:
+    #       context:        ./frontend
+    #       dockerfile:     Dockerfile
+    #     volumes:
+    #       - ./frontend/app:/home/node/app
+    #       - /home/node/app/node_modules # to have node_modules in development
+    #     command:          npm start
+    #     working_dir:      /home/node/app
+    #     environment:
+    #       - NODE_ENV=development
+    #     ports:
+    #       - 3000:3000
+    #       - 3001:3001
+    #       - '8080:80'
+    #     container_name:   smartbrains_frontend
+    backend:
+        build:
+          context:      ./backend
+          dockerfile:   Dockerfile
+        volumes:
+          - ./backend:/src
+        #command:        npm start
+        working_dir:    /src
+        ports:
+          - 5000:5000
+        container_name: imdb_backend
