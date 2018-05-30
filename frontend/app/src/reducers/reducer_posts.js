@@ -15,7 +15,7 @@ export default function(state = initialState, action) {
       console.log('reducer',action.payload);
       return {
         ...state,
-        sentiments: [...state.sentiments, action.payload.data]
+        sentiments: [action.payload.data, ...state.sentiments]
       }
     default: return state
   }

@@ -14,6 +14,6 @@ RUN npm install --quiet
 
 #RUN chmod -R a+rwx ./node_modules
 
-ENTRYPOINT while true; do echo hello world; sleep 1; done
+#ENTRYPOINT while true; do echo hello world; sleep 1; done
 
 COPY . .

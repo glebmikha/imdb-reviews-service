@@ -7,7 +7,7 @@ services:
         volumes:
           - ./frontend/app:/home/node/app
           - /home/node/app/node_modules # to have node_modules in development
-        # command:          npm start
+        command:          npm start
         working_dir:      /home/node/app
         # environment:
         #   - NODE_ENV=development
@@ -20,7 +20,7 @@ services:
           dockerfile:   Dockerfile
         volumes:
           - ./backend:/src
-        #command:        npm start
+        #command:        python run_keras_server.py
         working_dir:    /src
         ports:
           - 5000:5000
