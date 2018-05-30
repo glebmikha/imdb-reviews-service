@@ -11,6 +11,7 @@ class PostIndex extends Component {
         <li className="list-group-item" key={sentiment.id}>
           {sentiment.text}
           <span> {sentiment.sentiment}</span>
+          <h1> {sentiment.sign}</h1>
         </li>
       )
     })

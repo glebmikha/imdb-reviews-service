@@ -13,6 +13,8 @@ CORS(application)
 model = None
 tokenizer = None
 
+id = 0
+
 graph = tf.get_default_graph()
 
 def load_model_and_tokenizer():
@@ -51,8 +53,14 @@ def predict():
 			with graph.as_default():
 				preds = model.predict(text)[0][0]
 
+			sign = '-' if preds <= 0.5 else '+'
+
+			global id
 			data["sentiment"] = str(preds)
 			data["text"] = request
+			data["id"] = id
+			data["sign"] = sign
+			id += 1
 
 	return flask.jsonify(data)
 
