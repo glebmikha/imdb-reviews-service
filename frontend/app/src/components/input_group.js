@@ -16,6 +16,14 @@ class InputGroup extends Component {
   onButtonClick(term) {
     console.log(term);
     this.props.fetchSentiment(term);
+    
+  }
+
+  _handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      this.props.fetchSentiment(this.state.term);
+
+    }
   }
 
   render() {
@@ -23,7 +31,10 @@ class InputGroup extends Component {
       <div className="input-group">
         <input
           onChange={event => this.onInputChange(event.target.value)}
-          type="text" className="form-control space-right"/>
+          type="text"
+          className="form-control space-right"
+          onKeyPress={this._handleKeyPress}
+        />
         <span className="input-group-btn">
             <button
               onClick={() => this.onButtonClick(this.state.term)}
