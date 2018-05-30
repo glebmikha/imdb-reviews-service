@@ -6,8 +6,10 @@ import flask
 from flask import request
 import tensorflow as tf
 max_len = 400
+from flask_cors import CORS
 
 application = flask.Flask(__name__)
+CORS(application)
 model = None
 tokenizer = None
 
