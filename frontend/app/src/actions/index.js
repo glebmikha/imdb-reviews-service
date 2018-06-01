@@ -2,7 +2,6 @@ import axios from 'axios';
 
 export const FETCH_SENTIMENT = 'FETCH_SENTIMENT'
 
-
 export function fetchSentiment(text) {
   console.log('action',text);
   const values = {text: text}

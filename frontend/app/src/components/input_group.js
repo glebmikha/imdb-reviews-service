@@ -16,7 +16,7 @@ class InputGroup extends Component {
   onButtonClick(term) {
     console.log(term);
     this.props.fetchSentiment(term);
-    
+
   }
 
   _handleKeyPress = (e) => {
@@ -32,7 +32,7 @@ class InputGroup extends Component {
         <input
           onChange={event => this.onInputChange(event.target.value)}
           type="text"
-          className="form-control space-right"
+          className="form-control"
           onKeyPress={this._handleKeyPress}
         />
         <span className="input-group-btn">

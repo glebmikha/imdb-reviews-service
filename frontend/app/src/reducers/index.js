@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import PostReducer from './reducer_posts';
+import SentimentReducer from './reducer_sentiment';
 import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
-  sentiments: PostReducer,
+  sentiments: SentimentReducer,
 });
 
 export default rootReducer;

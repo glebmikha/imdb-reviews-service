@@ -23,6 +23,7 @@ module.exports = {
     historyApiFallback: true,
     contentBase: './',
     host: "0.0.0.0",
+    disableHostCheck: true,
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000

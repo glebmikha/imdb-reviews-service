@@ -1,3 +1,24 @@
 .lowopacity {
   opacity: 0.5;
 }
+
+.red {
+  background-color: #ffe6e6;
+}
+
+.green {
+  background-color: #d6f5d6;
+}
+
+.input-group .form-control {
+  margin-right: 20px;
+  width: 100px;
+}
+
+.input-group .btn {
+  margin-left: 20px;
+}
+
+.input-group {
+  margin-top: 25px;
+}

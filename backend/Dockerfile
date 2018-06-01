@@ -13,6 +13,6 @@ COPY . .
 
 #ENTRYPOINT ["python", "/src/app.py"]
 
-#ENTRYPOINT while true; do echo hello world; sleep 1; done
+ENTRYPOINT while true; do echo hello world; sleep 1; done
 
-ENTRYPOINT python run_keras_server.py
+#ENTRYPOINT python run_keras_server.py
