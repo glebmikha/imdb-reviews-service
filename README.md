@@ -1,9 +1,17 @@
+A simple API in Flask with Keras sentiment model and frontend in React and Redux.
+
+To try it out clone the repo and run:
+
+```
+  docker-compose up -d
+```
+
+and then go to localhost:8080.
+
+To get into containers:
+
+```
 bash -c clear && docker exec -it imdb_backend sh
 
-python run_keras_server.py
-
-
-gunicorn -w4 -b0.0.0.0:5000 run_keras_server:application
-
-
 bash -c clear && docker exec -it imdb_frontend sh
+```
