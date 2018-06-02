@@ -10,15 +10,67 @@
   background-color: #d6f5d6;
 }
 
-.input-group .form-control {
-  margin-right: 20px;
-  width: 100px;
+.results-group {
+  margin-top: 10px;
 }
 
-.input-group .btn {
-  margin-left: 20px;
+.searchContainer {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.input-group {
-  margin-top: 25px;
+
+.searchBox {
+  border: 0;
+  flex: 1;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  font-size: 1.1em;
 }
+
+.searchButton {
+  background: #538AC5;
+  border: 0;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0;
+  font-size: 1.1em;
+}
+
+table {
+  width: 100%;
+}
+
+.sentiment {
+  width: 80%
+}
+
+.prob {
+  width: 10%
+}
+
+.sign {
+  width: 10%
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+body {
+  max-width: 800px;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+/* table {
+  border-spacing: 12px;
+  padding-top: 10px;
+} */
+
+/* tr.red>td {
+  padding-bottom: 1em;
+} */

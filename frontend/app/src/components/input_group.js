@@ -7,6 +7,8 @@ class InputGroup extends Component {
   constructor(props) {
     super(props);
     this.state = { term: '' }
+
+    this.onButtonClick = this.onButtonClick.bind(this);
   }
 
   onInputChange(term) {
@@ -16,30 +18,34 @@ class InputGroup extends Component {
   onButtonClick(term) {
     console.log(term);
     this.props.fetchSentiment(term);
-
+    this.setState({term: ''})
   }
 
   _handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       this.props.fetchSentiment(this.state.term);
-
+      this.setState({term: ''});
     }
   }
 
   render() {
     return (
-      <div className="input-group">
+      <div className='searchContainer'>
         <input
           onChange={event => this.onInputChange(event.target.value)}
+          value={this.state.term}
           type="text"
-          className="form-control"
+          className="searchBox"
+          placeholder="Paste your review..."
           onKeyPress={this._handleKeyPress}
         />
-        <span className="input-group-btn">
-            <button
-              onClick={() => this.onButtonClick(this.state.term)}
-                className="btn btn-success" type="button">Get sentiment</button>
-        </span>
+
+        <input
+          onClick={() => this.onButtonClick(this.state.term)}
+          className="searchButton"
+          type="submit"
+          value="Get sentiment"
+        />
       </div>
     )
   }

@@ -4,14 +4,11 @@ import _ from 'lodash';
 
 class SentimentIndex extends Component {
 
-  componentDidMount(){
-    console.log('sentind mounted');
-  }
-
   renderSentiments() {
 
     return _.map(this.props.sentiments, sentiment => {
       return (
+                
         <tr className={sentiment.sign==='+' ? 'green' : 'red'}
           key={sentiment.id}>
           <td>{sentiment.text}</td>
@@ -24,21 +21,26 @@ class SentimentIndex extends Component {
 
   render() {
     return (
-      <div>
-        <table className="table">
-          <tbody>
-            {this.renderSentiments()}
-          </tbody>
-        </table>
+      <div className='results-group'>
         {!this.props.sentiments.length > 0 ?
           <div className="lowopacity"><strong>Try to copy this: </strong>The one actor that gave this reviewer pause was Anne Hathaway
             as Selina Kyle. She has historically been typecast as the girl next door,
             so it was a shock to watch her steal and fight her way through the City of Gotham.
             After a few scenes, however, we were convinced that the casting decisions was a
             good one, as Hathaway portrayed the darker Catwoman role brilliantly</div>
-            :<div></div>
+            :
+              <table>
+                <colgroup>
+                  <col className='sentiment'/>
+                  <col className='prob'/>
+                  <col className='sign'/>
+                </colgroup>
+                <tbody>
+                  {this.renderSentiments()}
+                </tbody>
+              </table>
         }
-      </div>
+        </div>
     )
   }
 }
