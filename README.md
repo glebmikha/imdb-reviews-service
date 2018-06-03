@@ -15,3 +15,26 @@ bash -c clear && docker exec -it imdb_backend sh
 
 bash -c clear && docker exec -it imdb_frontend sh
 ```
+
+gunicorn -w4 -b0.0.0.0:5000 server:app
+
+curl http://localhost:5000
+
+curl http://localhost
+
+curl http://192.168.32.2:5000
+
+curl backend:5000
+
+curl http://backend:5000
+
+
+
+
+
+
+curl backend:8080
+
+curl -d '{"text":"this movie is awesome"}' -H "Content-Type: application/json" -X POST backend:5000/predict
+
+curl -d '{"text":"this movie is awesome"}' -H "Content-Type: application/json" -X POST http://backend:5000/predict

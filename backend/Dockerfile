@@ -1,18 +1,11 @@
 FROM python:3
-#FROM jupyter/datascience-notebook
 
 COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
-#RUN apt-get install libhdf5-dev
-
 COPY . .
 
-#EXPOSE 5000
+#ENTRYPOINT while true; do echo hello world; sleep 1; done
 
-#ENTRYPOINT ["python", "/src/app.py"]
-
-ENTRYPOINT while true; do echo hello world; sleep 1; done
-
-#ENTRYPOINT python run_keras_server.py
+ENTRYPOINT gunicorn -w1 -b0.0.0.0:5000 server:app

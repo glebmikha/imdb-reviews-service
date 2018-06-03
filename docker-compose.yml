@@ -1,4 +1,5 @@
 version:                  "3"
+
 services:
     frontend:
         build:
@@ -14,6 +15,11 @@ services:
         ports:
           - 8080:8080
         container_name:   imdb_frontend
+        depends_on:
+          - backend
+        links:
+          - backend
+
     backend:
         build:
           context:      ./backend
